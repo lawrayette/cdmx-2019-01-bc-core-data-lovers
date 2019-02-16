@@ -12,6 +12,7 @@ const start = document.getElementById('start');
 const rootContainer = document.getElementById('rootContainer');
 const options = document.getElementById('options');
 const sortt = document.getElementById('ordenar');
+const Charmander = document.getElementById ('charmander');
 
 // Declara boton de tipos de pokemones en un array, por medio de su clase.
 const buttonFilter = Array.from(document.getElementsByClassName("boton-typeChart"));
@@ -73,6 +74,10 @@ const printResult = (getType) => {
 };
 
 //ordena de la a - z 
+sortt.addEventListener('click' , () => {
+  let orderAtoZ = window.allPokemon.orderData(resultTotal);
+  printOrder(orderAtoZ);
+})
 sortt.addEventListener('click' , () => {
   let orderAtoZ = window.allPokemon.orderData(resultTotal);
   printOrder(orderAtoZ);

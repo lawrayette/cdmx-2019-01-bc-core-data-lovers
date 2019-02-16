@@ -22,7 +22,7 @@
     color: transparent;
   }
   #regresar {
-    |background: transparent;
+    background: transparent;
     border: 0;
     color: white;
     font-size: 100%;
@@ -173,4 +173,5 @@ head {
   background-image: url(./atrapalosya.png);
 
 }
+
 }
