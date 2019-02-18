@@ -9,7 +9,7 @@ window.allPokemon = {
 
   orderData: (arrayOfType) => {
 
-    arrayOfType.sort((a, b) => a.name > b.name ? 1 : - 1);
+    arrayOfType.sort((a, b) => a.name > b.name ? 1 : -1);
     return arrayOfType;
   }
 };
