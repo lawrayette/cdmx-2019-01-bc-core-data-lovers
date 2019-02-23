@@ -6,7 +6,7 @@ let resultTotal;
 const startPokedex = document.getElementById('start-pokemon');
 const next = document.getElementById('next-page');
 const back = document.getElementById('back');
-const sort = document.getElementById('order');
+const sortMobile = document.getElementById('order-mobile');
 const sortDesk = document.getElementById('order-desktop');
 
 // Declara Sections
@@ -19,29 +19,6 @@ const finalResult = document.getElementById('root');
 
 // Declara boton de tipos de pokemones en un array, por medio de su clase.
 const buttonFilter = Array.from(document.getElementsByClassName("boton-type-chart"));
-
-/*
-Cambiar de página en Mobile
-*/
-
-startPokedex.addEventListener("click", () => {
-  start.style.display = "none";
-  rootContainer.style.display = "none";
-  options.style.display = "block";
-});
-
-next.addEventListener("click", () => {
-  start.style.display = "none";
-  rootContainer.style.display = "block";
-  options.style.display = "none";
-});
-
-back.addEventListener("click", () => {
-  start.style.display = "none";
-  rootContainer.style.display = "none";
-  options.style.display = "block";
-});
-
 
 // Obtiene los datos solicitados del objeto Data. Lo compara con el array de botones y filta por tipo.
 
@@ -88,11 +65,35 @@ const printOrder = (arrayOfTypes) => {
 
 gettingType(buttonFilter);
 
-//ordena de la a - z 
-sort.addEventListener('click', () => {
+/*
+Cambiar de página en Mobile
+*/
+
+startPokedex.addEventListener("click", () => {
+  start.style.display = "none";
+  rootContainer.style.display = "none";
+  options.style.display = "block";
+});
+
+next.addEventListener("click", () => {
+  start.style.display = "none";
+  rootContainer.style.display = "block";
+  options.style.display = "none";
+});
+
+back.addEventListener("click", () => {
+  start.style.display = "none";
+  rootContainer.style.display = "none";
+  options.style.display = "block";
+});
+
+//ordena de la a - z en Mobile
+sortMobile.addEventListener('click', () => {
   let orderAtoZ = window.allPokemon.orderData(resultTotal);
   printOrder(orderAtoZ);
 })
+
+// ordena de la A-Z en Desktop
 sortDesk.addEventListener('click', () => {
   let orderAtoZ = window.allPokemon.orderData(resultTotal);
   printOrder(orderAtoZ);
