@@ -53,7 +53,7 @@ const printResult = (getType) => {
 const printOrder = (arrayOfTypes) => {
   finalResult.innerHTML = "";
  arrayOfTypes.map(data => {
-   finalResult.innerHTML += `<button class="pokedex"  style='width:100%; height:100% background-color: blue;'>
+   finalResult.innerHTML += `<button class="pokedex"  style='width:100%; height:100%;'>
    <img src="${data.img}">
    <br>Nùmero: ${data.id} 
    <br> Nombre: ${data.name} 
