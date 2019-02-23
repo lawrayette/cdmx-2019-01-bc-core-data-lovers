@@ -145,7 +145,9 @@
     BACKGROUND-SIZE: 80%;
     background-position: center;
   }
-
+#card{
+    background-position: center;
+}
   #start-pokemon {
     color: transparent;
     background-color: transparent;
@@ -230,8 +232,9 @@
     margin-left: 33%;
   }
 
-  #orde-desktop  {
-    margin-top: 16%;
-    margin-left: 29%;
+  #order-desktop  {
+    margin-top: 28%;
+    margin-left: 23%;
+    font-size: 31px;
   }
 }
