@@ -142,7 +142,6 @@ describe('es una función para filtrar Pokemones', () => {
   it('Filtra/ Regresa la data solicitada', () => {
     expect(window.allPokemon.dataFiltered(pokemon, 'Grass')[0])
     .toEqual(pokemon[0])
-     
     });
   });
   
@@ -155,3 +154,15 @@ describe('es una función para filtrar Pokemones', () => {
     it('Ordena los nombres de la A a la Z' , () => {
       expect(window.allPokemon.orderData(arregloConTipos))
       .toEqual(arregloConTipos.sort((a, b) => a.name > b.name ? 1 : - 1))});
+
+    describe ('Compute es una función que suma los dulces totales del juego', () => {
+      it ('is a function', () => { 
+     expect(typeof window.allPokemon.compute).toBe('function');
+      });
+    });
+  
+    it('suma los dulces' , () => {
+      expect(window.allPokemon.compute(arregloConTipos))
+      .toEqual(arregloConTipos.reduce((prev, next) => prev + next))});
+
+      

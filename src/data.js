@@ -11,5 +11,14 @@ window.allPokemon = {
 
     arrayOfType.sort((a, b) => a.name > b.name ? 1 : -1);
     return arrayOfType;
-  }
-};
+  },
+
+  compute: (candy) => {
+   
+  candy.reduce((prev, next) => prev + next);
+  return candy; 
+}
+
+  
+
+}

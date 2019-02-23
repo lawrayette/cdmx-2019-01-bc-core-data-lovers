@@ -24,7 +24,7 @@
     color: transparent;
   }
 
-  #regresar {
+ #back {
     background: transparent;
     /* border: 0; */
     padding: 1%;
@@ -43,7 +43,7 @@
     background-size: 100vW;
   }
 
-  #buttonContainer {
+  #button-container {
     display: inline-block;
     padding: 41vw;
     height: 59vw;
@@ -52,13 +52,13 @@
     margin-left: 0vw;
   }
 
-  #startPokemon {
+  #start-pokemon {
     background-color: transparent;
     color: white;
     padding: 3%;
     font-size: 4vw;
 }
-.boton-typeChart {
+.boton-type-chart {
   background-color: #0763db;
   padding: 2vw;
   margin: 1vw;
@@ -74,7 +74,7 @@
     background-size: 100vw;
   }
 
-  #optionsContainer {
+  #options-container {
     display: inline-block;
     height: 28vw;
     width: 70vw;
@@ -82,7 +82,7 @@
     margin-left: 18vw;
   }
 
-  #rootContainer {
+  #root-container {
     background-image: url(./result.png);
     height: -webkit-fill-available;
     width: 100vw;
@@ -90,13 +90,13 @@
     background-size: 100vw;
   }
 
-  #nextContainer {
+  #next-container {
     display: inline-block;
     height: 57vw;
     width: 66vw;
   }
 
-  #nextPage {
+  #next-page {
     margin-top: 21vw;
     margin-left: 29vw;
     background-color: transparent;
@@ -114,11 +114,11 @@
   }
 
   #options,
-  #rootContainer {
+  #root-container {
     display: none;
   }
 
-  #ordenar {
+  #order {
     margin-top: 9%;
     float: right;
     margin-right: -34%;
@@ -127,7 +127,7 @@
     color: white;
     font-size: 102%;
 }
-  #ordenarDesktop {
+  #ordenar-desktop {
     display: none
   }
 }
@@ -145,13 +145,13 @@
     background-position: center;
   }
 
-  #startPokemon {
+  #start-pokemon {
     color: transparent;
     background-color: transparent;
     border: none;
   }
 
-  .boton-typeChart {
+  .boton-type-chart {
     display: inline-block;
     background-color: #0763db;
     padding: 1%;
@@ -161,12 +161,12 @@
     background-attachment: fixed;
 }
 
-  .botonesInferiores {
+  .button-order-mobil, .button-back-mobil {
     display: none;
     margin-top: 16%
   }
 
-  #regresar {
+  #back {
     display: none;
   }
 
@@ -177,7 +177,7 @@
     background-attachment: fixed;
   }
 
-  #optionsContainer {
+  #options-container {
     width: 59%;
     height: 24%;
     margin-top: 74%;
@@ -185,7 +185,7 @@
     background-attachment: fixed;
   }
 
-  #rootContainer {
+  #root-container {
     float: left;
     width: 51vw;
     height: 68vw;
@@ -201,7 +201,7 @@
     margin-left: 26%;
   }
 
-  #nextPage {
+  #next-page {
     background-color: transparent;
     color: transparent;
     border: 0;
@@ -211,7 +211,7 @@
     color: transparent;
   }
 
-  #charmander {
+  #charizard-background {
     background-image: url(./atrapalosya.png);
     width: 44%;
     display: inline-block;
@@ -226,13 +226,12 @@
     background-image: url(./FeminineRemarkableChuckwalla-small.gif);
     width: 45%;
     height: 67%;
-    /* display: inline-block; */
     float: inherit;
     margin-top: -16%;
     margin-left: 33%;
   }
 
-  #ordenarDesktop {
+  #orde-desktop  {
     margin-top: 16%;
     margin-left: 29%;
   }
