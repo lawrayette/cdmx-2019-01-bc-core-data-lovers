@@ -1,168 +1,109 @@
+//Declarar objeto de la data
+const data = window.POKEMON.pokemon;
+let resultTotal;
 
-const data = POKEMON.pokemon;
+// Declara botones
+const startPokedex = document.getElementById('start-pokemon');
+const next = document.getElementById('next-page');
+const back = document.getElementById('back');
+const sort = document.getElementById('order');
+const sortDesk = document.getElementById('order-desktop');
+
+// Declara Sections
+const start = document.getElementById('start');
+const rootContainer = document.getElementById('root-container');
+const options = document.getElementById('options');
+const Charmander = document.getElementById('charizard');
+const gif = document.getElementById('charizard-background');
 const finalResult = document.getElementById('root');
-const butFire = document.getElementById ('Fire');
-const butNormal = document.getElementById ('Normal');
-const butGrass = document.getElementById ('Grass');
-const butIce = document.getElementById ('Ice');
-const butElectric= document.getElementById ('Electric');
-const butFight= document.getElementById ('Fighting');
-const butGround = document.getElementById ('Ground');
-const butFly = document.getElementById ('Flying');
-const butPoison= document.getElementById ('Poison');
+
+// Declara boton de tipos de pokemones en un array, por medio de su clase.
+const buttonFilter = Array.from(document.getElementsByClassName("boton-type-chart"));
+
+/*
+Cambiar de página en Mobile
+*/
+
+startPokedex.addEventListener("click", () => {
+  start.style.display = "none";
+  rootContainer.style.display = "none";
+  options.style.display = "block";
+});
+
+next.addEventListener("click", () => {
+  start.style.display = "none";
+  rootContainer.style.display = "block";
+  options.style.display = "none";
+});
+
+back.addEventListener("click", () => {
+  start.style.display = "none";
+  rootContainer.style.display = "none";
+  options.style.display = "block";
+});
 
 
-// Filtra fuego
-const typeFire = data.filter(data => data.type.includes("Fire"));
-const printFire = (name, imagen, type, id) => {
-  let fire = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += fire;
-};   
-butFire.addEventListener("click", filterFire);
-function filterFire() {
-  typeFire.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printFire(name, imagen, type, id);
+// Obtiene los datos solicitados del objeto Data. Lo compara con el array de botones y filta por tipo.
+
+const gettingType = (arrayofButtons) => {
+  arrayofButtons.map((buttonSelected) => {
+    buttonSelected.addEventListener("click", (event) => {
+      Charmander.style.display = "none";
+      gif.style.display = 'none';
+      const buttonType = event.target.id;
+      const dataFiltered = window.allPokemon.dataFiltered(data, buttonType);
+      printResult(dataFiltered)
+    })
   });
-}
-// filtra Normal
-const typeNormal = data.filter(data => data.type.includes("Normal"));
-const printNormal = (name, imagen, type, id) => {
-  let normal = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += normal;
-};   
-butNormal.addEventListener("click", filterNormal);
-function filterNormal() {
-  typeNormal.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printNormal(name, imagen, type, id);
+};
+
+// Imprime resultados por tipo. 
+const printResult = (getType) => {
+  resultTotal = getType
+  finalResult.innerHTML = "";
+  getType.map(data => {
+    finalResult.innerHTML += `<button class="pokedex"  style='width:100%; height:100%'>
+    <img src="${data.img}">
+    <br>Nùmero: ${data.id} 
+    <br> Nombre: ${data.name} 
+    <br> Tipo: ${data.type}
+    <br> Mejor horario para encontrarlo: ${data.spawn_time}</button>`;
   });
-}
-// filtra e imprime Grass
-const typeGrass = data.filter(data => data.type.includes("Grass"));
-const printGrass = (name, imagen, type, id) => {
-  let grass = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += grass;
-};   
+  return getType;
+};
 
-butGrass.addEventListener("click", filterGrass);
-function filterGrass() {
-  typeGrass.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printGrass(name, imagen, type, id);
-  });
-}
+//imprime de la a - z
+const printOrder = (arrayOfTypes) => {
+  finalResult.innerHTML = "";
+ arrayOfTypes.map(data => {
+   finalResult.innerHTML += `<button class="pokedex"  style='width:100%; height:100% background-color: blue;'>
+   <img src="${data.img}">
+   <br>Nùmero: ${data.id} 
+   <br> Nombre: ${data.name} 
+   <br> Tipo: ${data.type}
+   <br> Mejor horario para encontrarlo: ${data.spawn_time}</button>`;
+ });
+ return arrayOfTypes;
+};
 
-//Filtra e imprime Electric
-const typeElectric = data.filter(data => data.type.includes("Electric"));
-const printElectric = (name, imagen, type, id) => {
-  let electric = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += electric;
-};   
+gettingType(buttonFilter);
 
-butElectric.addEventListener("click", filterElectric);
-function filterElectric() {
-  typeElectric.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printElectric(name, imagen, type, id);
-  });
-}
-// ICE
-const typeIce = data.filter(data => data.type.includes("Ice"));
-const printIce = (name, imagen, type, id) => {
-  let ice = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += ice;
-};   
+//ordena de la a - z 
+sort.addEventListener('click', () => {
+  let orderAtoZ = window.allPokemon.orderData(resultTotal);
+  printOrder(orderAtoZ);
+})
+sortDesk.addEventListener('click', () => {
+  let orderAtoZ = window.allPokemon.orderData(resultTotal);
+  printOrder(orderAtoZ);
+})
 
-butIce.addEventListener("click", filterIce);
-function filterIce() {
-  typeIce.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printIce(name, imagen, type, id);
-  });
-}
-// Pelea
-const typeFight = data.filter(data => data.type.includes("Fighting"));
-const printFigth = (name, imagen, type, id) => {
-  let Fighting = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += Fighting;
-};   
 
-butFight.addEventListener("click", filterFight);
-function filterFight() {
-  typeFight.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printFigth(name, imagen, type, id);
-  });
-}
-// Poison
-const typePoison = data.filter(data => data.type.includes("Poison"));
-const printPoison = (name, imagen, type, id) => {
-  let poison = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += poison;
-};   
-
-butPoison.addEventListener("click", filterPoison);
-function filterPoison() {
-  typePoison.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printPoison(name, imagen, type, id);
-  });
-}
-//Ground
-const typeGround = data.filter(data => data.type.includes("Ground"));
-const printGround = (name, imagen, type, id) => {
-  let ground = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += ground;
-};   
-
-butGround.addEventListener("click", filterGround);  
-function filterGround() {
-  typeGround.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printGround(name, imagen, type, id);
-  });
-}
-// Voladores
-const typeFlying = data.filter(data => data.type.includes("Flying"));
-const printFlying = (name, imagen, type, id) => {
-  let flying = `<button class="pokedex" style='width:150px; height:200px'><img src="${imagen}"><br>Nùmero: ${id} <br> Nombre: ${name} <br> Tipo: ${type}</button>`;
-  finalResult.innerHTML += flying;
-};   
-
-butFly.addEventListener("click", filterFlying);
-function filterFlying() {
-  typeFlying.forEach(data => {
-    let name = data.name;
-    let imagen = data.img;
-    let type = data.type;
-    let id = data.id;
-    printFlying(name, imagen, type, id);
-  });
-}
-
+//
+let candy = [];
+data.forEach((element) => {
+  if (element.candy_count > 0 ) {
+    candy.push(element.candy_count)
+  }
+});
 

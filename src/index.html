@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>Pokedex</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image" href="./favicon.png">
-  </head>
-  <body>
-    <section id = "start" class = "hide">
-      <div id = "buttonContainer">
-        <button  id= "startPokemon" class = "start">S T A R T</button>
-      </div>
-        
-    </section>
-    
-      <section id= "options" class = "pokedex" >
-        <div id = "optionsContainer">
-            <button type = "button" id= "Fire" class = "typeChart hide">Fuego</button>
-            <button type = "button" id= "Normal" class = "typeChart hide">Normal</button>
-            <button type = "button" id= "Grass" class = "typeChart hide" >Hierba</button>
-            <button type = "button" id= "Ice"  class = "typeChart hide">Hielo</button>
-            <button type = "button" id= "Electric"  class = "typeChart hide">Eléctrico</button>
-            <button type = "button" id= "Fighting" class = "typeChart hide" >Pelea</button>
-            <button type = "button" id= "Poison"  class = "typeChart hide">Veneno</button>
-            <button type = "button" id= "Ground" class = "typeChart hide">Tierra</button>
-            <button type = "button" id= "Flying" class = "typeChart hide">Volador</button>
-        </div>
-      </section>
-   <section id = "rootContainer">
-      <div id = "root" class = "hide">
-      
-        </div>
-   </section>
-    
-    <script src="./data/pokemon/pokemon.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+
+<head>
+  <title>P O K E D E X</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image" href="./favicon.png">
+</head>
+
+<body>
+  <section id="start" class="hide">
+    <div id="button-containe">
+      <button id="start-pokemon" class="start">S T A R T</button>
+    </div>
+
+  </section>
+
+  <section id="options" class="pokedex hide">
+   
+    <div id="options-container">
+      <button type="button" id="Fire" class="boton-type-chart">Fuego</button>
+      <button type="button" id="Normal" class="boton-type-chart">Normal</button>
+      <button type="button" id="Grass" class="boton-type-chart">Hierba</button>
+      <button type="button" id="Ice" class="boton-type-chart">Hielo</button>
+      <button type="button" id="Electric" class="boton-type-chart">Eléctrico</button>
+      <button type="button" id="Fighting" class="boton-type-chart">Pelea</button>
+      <button type="button" id="Poison" class="boton-type-chart">Veneno</button>
+      <button type="button" id="Ground" class="boton-type-chart">Tierra</button>
+      <button type="button" id="Flying" class="boton-type-chart">Volador</button>
+      <button type="button" id="Psychic" class="boton-type-chart">Psíquico</button>
+      <button type="button" id="Bug" class="boton-type-chart">Bicho</button>
+      <button type="button" id="Rock" class="boton-type-chart">Roca</button>
+      <button type="button" id="Ghost" class="boton-type-chart">Fantasma</button>
+      <button type="button" id="Dragon" class="boton-type-chart">Dragón</button>
+      <button type="button" id="order-desktop" class="button-desktop">O R D E N A R</button>
+    </div>
+    <div><button type="button" id="next-page">S I G U I E N T E</button>
+    </div>
+  </section>
+
+  <section id="root-container" class="hide">
+    <button type="button" id="back" class="button-back-mobil">R E G R E S A R</button>
+    <button type="button" id="order" class="button-oder-mobil">O R D E N A R</button>
+    <div id="charizard" class="hide">
+    </div>
+
+    <div id="charizard-background" class="hide gif">
+    </div>
+    <div id="root">
+
+    </div>
+  </section>
+
+  <script src="./data/pokemon/pokemon.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
   </body>
+
 </html>

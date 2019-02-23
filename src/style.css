@@ -1,66 +1,238 @@
+/* 
+--------------------------
+----ESTILOS GENERALES-----
+-------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
-@import url('https://fonts.googleapis.com/css?family=Special+Elite');   
-*{
-    padding: 0vw;
-    margin:0vw;
-    font-family: 'Special Elite', cursive;
+* {
+  padding: 0vw;
+  margin: 0vw;
+  font-family: 'Special Elite', cursive;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+
 }
 
-#start {
-   background-image: url(./start.png);
-   height: -webkit-fill-available;
-   width: 100vw;
-   background-repeat: no-repeat;
-   background-size: 100vW;
+/* 
+--------------------------
+------ESTILOS MOBIL------
+-------------------------*/
+
+@media only screen and (max-width: 600px) {
+  title {
+    color: transparent;
   }
-  #buttonContainer {
-      display: inline-block;
-      padding: 41vw;
-      height: 59vw;
-      width: 60vw;
-      margin-top: 39vw;
-      margin-left: 0vw;
-      
+
+ #back {
+    background: transparent;
+    /* border: 0; */
+    padding: 1%;
+    color: white;
+    font-size: 103%;
+    float: right;
+    margin-top: 30%;
+    margin-right: 12%;
+}
+
+  #start {
+    background-image: url(./start.png);
+    height: -webkit-fill-available;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100vW;
   }
-  #startPokemon  {
-   background-color: transparent;
-   border: none;
-   color: white;
-   font-size: 4vw;
+
+  #button-container {
+    display: inline-block;
+    padding: 41vw;
+    height: 59vw;
+    width: 60vw;
+    margin-top: 39vw;
+    margin-left: 0vw;
+  }
+
+  #start-pokemon {
+    background-color: transparent;
+    color: white;
+    padding: 3%;
+    font-size: 4vw;
 }
-.typeChart  {
-   background-color: #0763db;
-   border: none;
-   padding: 2vw;
-   margin: 1vw;
-   font-size: 4vw;
+.boton-type-chart {
+  background-color: #0763db;
+  padding: 2vw;
+  margin: 1vw;
+  font-size: 4vw;
+  color: white;
 }
+
   #options {
-   background-image: url(./options.png);
-   height: -webkit-fill-available;
-   width: 100vw;
-   background-repeat: no-repeat;
-   background-size: 100vw;
+    background-image: url(./options.png);
+    height: -webkit-fill-available;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100vw;
   }
-  #optionsContainer {
-   display: inline-block;
-   height: 28vw;
-   width: 70vw;
-   margin-top: 70vw;
-   margin-left: 18vw;
+
+  #options-container {
+    display: inline-block;
+    height: 28vw;
+    width: 70vw;
+    margin-top: 70vw;
+    margin-left: 18vw;
+  }
+
+  #root-container {
+    background-image: url(./result.png);
+    height: -webkit-fill-available;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+  }
+
+  #next-container {
+    display: inline-block;
+    height: 57vw;
+    width: 66vw;
+  }
+
+  #next-page {
+    margin-top: 21vw;
+    margin-left: 29vw;
+    background-color: transparent;
+    font-size: 5vw;
+    padding: 3vw;
+    color: white;
+  }
+
+  #root {
+    overflow: auto;
+    height: 85vw;
+    width: 66vw;
+    margin-top: 17vw;
+    margin-left: 14vw;
+  }
+
+  #options,
+  #root-container {
+    display: none;
+  }
+
+  #order {
+    margin-top: 9%;
+    float: right;
+    margin-right: -34%;
+    background: transparent;
+    padding: 1%;
+    color: white;
+    font-size: 102%;
 }
-  
-  #rootContainer {
-   background-image: url(./result.png);
-   height: -webkit-fill-available;
-   width: 100vw;
-   background-repeat: no-repeat;
-   background-size: 100vw;
+  #ordenar-desktop {
+    display: none
   }
- #root {
-   display: inline-block;
-   height: 91vw;
-   width: 71vw;
-   margin-top: 50vw;
-   margin-left: 11vw;
+}
+
+/* 
+--------------------------
+------ESTILOS DESKTOP-----
+-------------------------*/
+@media only screen and (min-width: 601px) {
+  body {
+    background-image: url(./background.png);
+    background-color: #2697FF;
+    BACKGROUND-REPEAT: NO-REPEAT;
+    BACKGROUND-SIZE: 80%;
+    background-position: center;
+  }
+
+  #start-pokemon {
+    color: transparent;
+    background-color: transparent;
+    border: none;
+  }
+
+  .boton-type-chart {
+    display: inline-block;
+    background-color: #0763db;
+    padding: 1%;
+    font-size: 83%;
+    color: white;
+    margin: 1%;
+    background-attachment: fixed;
+}
+
+  .button-order-mobil, .button-back-mobil {
+    display: none;
+    margin-top: 16%
+  }
+
+  #back {
+    display: none;
+  }
+
+  #options {
+    float: right;
+    width: 45vw;
+    height: 69vw;
+    background-attachment: fixed;
+  }
+
+  #options-container {
+    width: 59%;
+    height: 24%;
+    margin-top: 74%;
+    margin-left: 8%;
+    background-attachment: fixed;
+  }
+
+  #root-container {
+    float: left;
+    width: 51vw;
+    height: 68vw;
+    background-attachment: fixed;
+  }
+
+  #root {
+    overflow: auto;
+    width: 24vw;
+    height: 29vh;
+    margin-top: 22vw;
+    padding: 7%;
+    margin-left: 26%;
+  }
+
+  #next-page {
+    background-color: transparent;
+    color: transparent;
+    border: 0;
+  }
+
+  head {
+    color: transparent;
+  }
+
+  #charizard-background {
+    background-image: url(./atrapalosya.png);
+    width: 44%;
+    display: inline-block;
+    height: 15%;
+    background-size: 101%;
+    margin-top: 51%;
+    margin-left: 33%;
+
+  }
+
+  .gif {
+    background-image: url(./FeminineRemarkableChuckwalla-small.gif);
+    width: 45%;
+    height: 67%;
+    float: inherit;
+    margin-top: -16%;
+    margin-left: 33%;
+  }
+
+  #orde-desktop  {
+    margin-top: 16%;
+    margin-left: 29%;
+  }
 }
