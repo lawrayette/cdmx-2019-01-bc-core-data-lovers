@@ -9,6 +9,7 @@ const back = document.getElementById('back');
 const sortMobile = document.getElementById('order-mobile');
 const sortDesk = document.getElementById('order-desktop');
 
+
 // Declara Sections
 const start = document.getElementById('start');
 const rootContainer = document.getElementById('root-container');
