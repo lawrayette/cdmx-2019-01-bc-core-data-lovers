@@ -127,6 +127,7 @@ const arregloConTipos = [{
     }]
   }];
 
+
 describe ('Es un objeto Pokemon', () => {
   it ('is an object', () => { 
 expect(typeof window.allPokemon).toBe('object');
@@ -155,14 +156,9 @@ describe('es una función para filtrar Pokemones', () => {
       expect(window.allPokemon.orderData(arregloConTipos))
       .toEqual(arregloConTipos.sort((a, b) => a.name > b.name ? 1 : - 1))});
 
-    describe ('Compute es una función que suma los dulces totales del juego', () => {
-      it ('is a function', () => { 
-     expect(typeof window.allPokemon.compute).toBe('function');
+      describe('computeStats es una función', () => {
+        it('is a function', () => {
+          expect(typeof window.allPokemon.compute).toBe('function');
+        });
+        
       });
-    });
-  
-    it('suma los dulces' , () => {
-      expect(window.allPokemon.compute(arregloConTipos))
-      .toEqual(arregloConTipos.reduce((prev, next) => prev + next))});
-
-      
