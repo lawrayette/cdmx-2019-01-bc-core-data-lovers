@@ -7,6 +7,8 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image" href="./favicon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,40 +22,33 @@
   <section id="options" class="pokedex hide">
    
     <div id="options-container">
-      <button type="button" id="Fire" class="boton-type-chart">Fuego</button>
-      <button type="button" id="Normal" class="boton-type-chart">Normal</button>
-      <button type="button" id="Grass" class="boton-type-chart">Hierba</button>
-      <button type="button" id="Ice" class="boton-type-chart">Hielo</button>
-      <button type="button" id="Electric" class="boton-type-chart">Eléctrico</button>
-      <button type="button" id="Fighting" class="boton-type-chart">Pelea</button>
-      <button type="button" id="Poison" class="boton-type-chart">Veneno</button>
-      <button type="button" id="Ground" class="boton-type-chart">Tierra</button>
-      <button type="button" id="Flying" class="boton-type-chart">Volador</button>
-      <button type="button" id="Psychic" class="boton-type-chart">Psíquico</button>
-      <button type="button" id="Bug" class="boton-type-chart">Bicho</button>
-      <button type="button" id="Rock" class="boton-type-chart">Roca</button>
-      <button type="button" id="Ghost" class="boton-type-chart">Fantasma</button>
-      <button type="button" id="Dragon" class="boton-type-chart">Dragón</button>
-      <button type="button" id="order-desktop" class="button-order">O R D E N A R</button>
-    </div>
-    <div><button type="button" id="next-page">S I G U I E N T E</button>
-    </div>
-  </section>
+      <button type="button" id="Fire" class="btn btn-danger boton-type-chart">Fuego</button>
+      <button type="button" id="Normal" class="btn btn-warning boton-type-chart">Normal</button>
+      <button type="button" id="Grass" class=" btn btn-success boton-type-chart">Hierba</button>
+      <button type="button" id="Ice" class="btn btn-primary boton-type-chart">Hielo</button>
+      <button type="button" id="Electric" class="btn btn-primary boton-type-chart">Eléctrico</button>
+      <button type="button" id="Fighting" class="btn btn-danger boton-type-chart">Pelea</button>
+      <button type="button" id="Poison" class="btn btn-success boton-type-chart">Veneno</button>
+      <button type="button" id="Ground" class="btn btn-dark boton-type-chart">Tierra</button>
+      <button type="button" id="Flying" class="btn btn-warning boton-type-chart">Volador</button>
+      <button type="button" id="Psychic" class="btn btn-secondary boton-type-chart">Psíquico</button>
+      <button type="button" id="Bug" class="btn btn-success boton-type-chart">Bicho</button>
+      <button type="button" id="Rock" class="btn btn-dark boton-type-chart">Roca</button>
+      <button type="button" id="Ghost" class="btn btn-primary boton-type-chart">Fantasma</button>
+      <button type="button" id="Dragon" class="btn btn-danger boton-type-chart">Dragón</button>
+      <button type="button" id="order-desktop" class="button-order btn btn-secondary btn-lg disabled">O R D E N A R</button>
+      </div>
+    </section>
 
   <section id="root-container" class="hide">
-    <button type="button" id="back" class="button-back-mobil">R E G R E S A R</button>
-    <button type="button" id="order-mobile" class="button-order">O R D E N A R</button>
-    <div id="charizard" class="hide">
-    </div>
-
-    <div id="charizard-background" class="hide gif">
+      <div id="charizard-background" class="hide gif">
     </div>
     <div id="root">
 
     </div>
   </section>
 
-  <script src="./data/pokemon/pokemon.js"></script>
+  
   <script src="data.js"></script>
   <script src="main.js"></script>
   </body>

@@ -1,35 +1,30 @@
-//Declarar objeto de la data
-const data = window.POKEMON.pokemon;
-let resultTotal;
-
-// Declara botones
-const startPokedex = document.getElementById('start-pokemon');
-const next = document.getElementById('next-page');
-const back = document.getElementById('back');
-const sortMobile = document.getElementById('order-mobile');
 const sortDesk = document.getElementById('order-desktop');
-
-
 // Declara Sections
+const startGame = document.getElementById('start-pokemon');
 const start = document.getElementById('start');
 const rootContainer = document.getElementById('root-container');
 const options = document.getElementById('options');
+const optionsContainer = document.getElementById('options-container');
 const Charmander = document.getElementById('charizard');
-const gif = document.getElementById('charizard-background');
 const finalResult = document.getElementById('root');
-
 // Declara boton de tipos de pokemones en un array, por medio de su clase.
 const buttonFilter = Array.from(document.getElementsByClassName("boton-type-chart"));
+// variable para filtrar ordenar
+let resultTotal;
 
+//FETCH
+let pokemons; 
+fetch("./data/pokemon/pokemon.json")
+    .then(res => res.json())
+    .then(data =>  pokemon = data.pokemon)
+    .then(() => window.allPokemon.dataFiltered(pokemon));
+   
 // Obtiene los datos solicitados del objeto Data. Lo compara con el array de botones y filta por tipo.
-
-const gettingType = (arrayofButtons) => {
+  const gettingType = (arrayofButtons) => {
   arrayofButtons.map((buttonSelected) => {
     buttonSelected.addEventListener("click", (event) => {
-      Charmander.style.display = "none";
-      gif.style.display = 'none';
       const buttonType = event.target.id;
-      const dataFiltered = window.allPokemon.dataFiltered(data, buttonType);
+      const dataFiltered = window.allPokemon.dataFiltered(pokemon, buttonType);
       printResult(dataFiltered)
     })
   });
@@ -40,12 +35,12 @@ const printResult = (getType) => {
   resultTotal = getType
   finalResult.innerHTML = "";
   getType.map(data => {
-    finalResult.innerHTML += `<button class="pokedex"  style='width:100%; height:100%'>
+    finalResult.innerHTML += `<button class="btn btn-info" style = "width:33%; height:33%">
+    <div class = "class="card text-white bg-info mb-3">
+    <h2> ${data.name}</h2>
     <img src="${data.img}">
-    <br>Nùmero: ${data.id} 
-    <br> Nombre: ${data.name} 
-    <br> Tipo: ${data.type}
-    <br> Mejor horario para encontrarlo: ${data.spawn_time}</button>`;
+    <br>ID: ${data.id} 
+    <br> Type: ${data.type}</div></button>`;
   });
   return getType;
 };
@@ -54,12 +49,12 @@ const printResult = (getType) => {
 const printOrder = (arrayOfTypes) => {
   finalResult.innerHTML = "";
  arrayOfTypes.map(data => {
-   finalResult.innerHTML += `<button class="pokedex"  style='width:100%; height:100%;'>
+   finalResult.innerHTML += `<button class="btn btn-info" style = "width:33%; height:33%">
+   <div class = "class="card text-white bg-info mb-3">
+   <h2> ${data.name}</h2>
    <img src="${data.img}">
-   <br>Nùmero: ${data.id} 
-   <br> Nombre: ${data.name} 
-   <br> Tipo: ${data.type}
-   <br> Mejor horario para encontrarlo: ${data.spawn_time}</button>`;
+   <br>ID: ${data.id} 
+   <br> Type: ${data.type}</div></button>`;
  });
  return arrayOfTypes;
 };
@@ -67,32 +62,8 @@ const printOrder = (arrayOfTypes) => {
 gettingType(buttonFilter);
 
 /*
-Cambiar de página en Mobile
+Cambiar de página Desktop
 */
-
-startPokedex.addEventListener("click", () => {
-  start.style.display = "none";
-  rootContainer.style.display = "none";
-  options.style.display = "block";
-});
-
-next.addEventListener("click", () => {
-  start.style.display = "none";
-  rootContainer.style.display = "block";
-  options.style.display = "none";
-});
-
-back.addEventListener("click", () => {
-  start.style.display = "none";
-  rootContainer.style.display = "none";
-  options.style.display = "block";
-});
-
-//ordena de la a - z en Mobile
-sortMobile.addEventListener('click', () => {
-  let orderAtoZ = window.allPokemon.orderData(resultTotal);
-  printOrder(orderAtoZ);
-})
 
 // ordena de la A-Z en Desktop
 sortDesk.addEventListener('click', () => {
@@ -100,12 +71,11 @@ sortDesk.addEventListener('click', () => {
   printOrder(orderAtoZ);
 })
 
-
-//
-let candy = [];
-data.forEach((element) => {
-  if (element.candy_count > 0 ) {
-    candy.push(element.candy_count)
-  }
+startGame.addEventListener("click", () => {
+  start.style.display = "none";
+  options.style.display = "block";
+  optionsContainer.style.display = "block";
+  rootContainer.style.display = "block";
+  finalResult.style.display = "block";
 });
 

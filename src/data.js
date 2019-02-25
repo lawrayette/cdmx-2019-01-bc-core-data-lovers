@@ -17,8 +17,7 @@ window.allPokemon = {
    
   candy.reduce((prev, next) => prev + next);
   return candy; 
-}
-
-  
+  }
 
 }
+
